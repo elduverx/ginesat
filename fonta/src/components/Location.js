@@ -12,7 +12,7 @@ const Location = () => {
             Nuestra <span className="text-blue-600">ubicación</span>
           </h2>
           <p className="max-w-3xl mx-auto text-lg text-gray-600">
-            Encuentra nuestra oficina principal en el centro de Madrid. Estamos bien comunicados por transporte público.
+            Encuentra nuestra oficina principal en Aldaia. Estamos bien comunicados por transporte público.
           </p>
         </div>
         
@@ -26,7 +26,7 @@ const Location = () => {
           <div className="grid grid-cols-1 md:grid-cols-3">
             <div className="col-span-2 h-[450px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.6770963726257!2d-3.703250684431334!3d40.41694517936439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287d698c3e5f%3A0xaece278a95a7f231!2sPlaza%20Mayor%2C%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1623172752834!5m2!1ses!2ses"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.1234567890123!2d-0.4612345678901234!3d39.46123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4c1c0c0c0c%3A0x0c0c0c0c0c0c0c0c!2sAv.%20dos%20de%20mayo%2C%2030%2C%2046960%20Aldaia%2C%20Valencia!5e0!3m2!1ses!2ses!4v1623172752834!5m2!1ses!2ses"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -41,8 +41,8 @@ const Location = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="font-medium text-gray-800 mb-1">Dirección</h4>
-                  <p className="text-gray-600">Calle Ejemplo 123</p>
-                  <p className="text-gray-600">28001 Madrid, España</p>
+                  <p className="text-gray-600">Av dos de mayo 30</p>
+                  <p className="text-gray-600">46960 Aldaia, Valencia</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-800 mb-1">Horario</h4>
@@ -51,14 +51,14 @@ const Location = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-800 mb-1">Contacto</h4>
-                  <p className="text-gray-600">Teléfono: +34 600 000 000</p>
-                  <p className="text-gray-600">Email: info@climatech.es</p>
+                  <p className="text-gray-600">Teléfono: +34 663 215 621</p>
+                  <p className="text-gray-600">Email: ginesat24@gmail.com</p>
                 </div>
               </div>
               
               <div className="mt-8">
                 <a
-                  href="https://www.google.com/maps/dir//Plaza+Mayor,+Madrid,+Espa%C3%B1a/@40.4169452,-3.7032507,17z/"
+                  href="https://www.google.com/maps/dir//Av.+dos+de+mayo,+30,+46960+Aldaia,+Valencia/@39.4612346,-0.4612346,17z/"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-5 rounded-md transition-colors"
@@ -81,9 +81,9 @@ const Location = () => {
             viewport={{ once: true }}
             className="bg-white p-6 rounded-lg shadow-md"
           >
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">Zona Centro</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">Zona Local</h3>
             <p className="text-gray-600 mb-4">
-              Servicio rápido en toda la zona centro de Madrid y alrededores.
+              Servicio rápido en Aldaia y alrededores inmediatos.
             </p>
             <p className="text-blue-600 font-medium">Tiempo de respuesta: 1-3 horas</p>
           </motion.div>
@@ -95,9 +95,9 @@ const Location = () => {
             viewport={{ once: true }}
             className="bg-white p-6 rounded-lg shadow-md"
           >
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">Comunidad de Madrid</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">Comunidad Valenciana</h3>
             <p className="text-gray-600 mb-4">
-              Damos servicio a toda la Comunidad de Madrid.
+              Damos servicio a toda la Comunidad Valenciana.
             </p>
             <p className="text-blue-600 font-medium">Tiempo de respuesta: 3-6 horas</p>
           </motion.div>

@@ -58,7 +58,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <a
-                href="tel:+34600000000"
+                href="tel:+34663215621"
                 className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors ml-4"
               >
                 Llámanos
@@ -94,7 +94,7 @@ const Navbar = () => {
           </Link>
         ))}
         <a
-          href="tel:+34600000000"
+          href="tel:+34663215621"
           className="bg-blue-600 text-white px-5 py-3 text-center hover:bg-blue-700"
         >
           Llámanos

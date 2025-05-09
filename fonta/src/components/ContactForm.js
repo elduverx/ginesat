@@ -63,16 +63,16 @@ const ContactForm = () => {
     {
       id: 1,
       title: 'Teléfono',
-      value: '+34 600 000 000',
+      value: '+34 663 215 621',
       icon: <FaPhone className="h-5 w-5 text-blue-600" />,
-      href: 'tel:+34600000000'
+      href: 'tel:+34663215621'
     },
     {
       id: 2,
       title: 'Email',
-      value: 'info@climatech.es',
+      value: 'ginesat24@gmail.com',
       icon: <FaEnvelope className="h-5 w-5 text-blue-600" />,
-      href: 'mailto:info@climatech.es'
+      href: 'mailto:ginesat24@gmail.com'
     },
     {
       id: 3,

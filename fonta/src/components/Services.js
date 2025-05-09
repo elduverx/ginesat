@@ -199,7 +199,7 @@ const Services = () => {
               <h3 className="text-xl font-medium text-gray-800 mb-2">¿Necesitas un servicio urgente?</h3>
               <p className="text-gray-600 mb-4">Nuestro equipo está disponible 24/7 para emergencias. Llámanos ahora y te atenderemos en menos de 30 minutos.</p>
               <a
-                href="tel:+34600000000"
+                href="tel:+34663215621"
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md py-2 px-5 text-center transition-colors"
               >
                 <FaClock className="inline-block mr-2" />

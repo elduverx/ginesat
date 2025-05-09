@@ -42,7 +42,7 @@ const About = () => {
               <div className="bg-orange-50 absolute -bottom-6 -right-6 w-24 h-24 rounded-lg"></div>
               <div className="relative z-10 rounded-xl overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&h=800&q=80" 
+                  src="/air.jpg" 
                   alt="Equipo de técnicos de climatización" 
                   className="w-full h-[400px] object-cover"
                 />

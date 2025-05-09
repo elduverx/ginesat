@@ -62,7 +62,7 @@ const Hero = () => {
                 Solicita tu presupuesto gratis
               </Link>
               <a
-                href="tel:+34600000000"
+                href="tel:+34663215621"
                 className="border border-blue-600 hover:bg-blue-50 text-blue-600 font-medium rounded-md py-3 px-6 text-center transition-colors flex items-center justify-center"
               >
                 <FaClock className="mr-2" />
@@ -102,7 +102,7 @@ const Hero = () => {
               <div className="bg-white rounded-xl shadow-xl overflow-hidden">
                 <div className="relative w-full h-[400px]">
                   <Image
-                    src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&h=800&q=80"
+                    src="/tecnico.jpg"
                     alt="Técnico realizando mantenimiento de aire acondicionado"
                     fill
                     className="object-cover rounded-xl"
