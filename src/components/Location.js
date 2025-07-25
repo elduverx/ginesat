@@ -26,7 +26,7 @@ const Location = () => {
           <div className="grid grid-cols-1 md:grid-cols-3">
             <div className="col-span-2 h-[450px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.1234567890123!2d-0.4612345678901234!3d39.46123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4c1c0c0c0c%3A0x0c0c0c0c0c0c0c0c!2sAv.%20dos%20de%20mayo%2C%2030%2C%2046960%20Aldaia%2C%20Valencia!5e0!3m2!1ses!2ses!4v1623172752834!5m2!1ses!2ses"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.1234567890123!2d-0.4612345678901234!3d39.46123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4c1c0c0c0c%3A0x0c0c0c0c0c0c0c0c!2sMare%20de%20Deu%20de%20la%20Purificacio%2026%2C%2046900%20Torrent%2C%20Valencia!5e0!3m2!1ses!2ses!4v1623172752834!5m2!1ses!2ses"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -58,7 +58,7 @@ const Location = () => {
               
               <div className="mt-8">
                 <a
-                  href="https://www.google.com/maps/dir//Av.+dos+de+mayo,+30,+46960+Aldaia,+Valencia/@39.4612346,-0.4612346,17z/"
+                  href="https://www.google.com/maps/dir//Mare+de+Deu+de+la+Purificacio+26,+46900+Torrent,+Valencia"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-5 rounded-md transition-colors"

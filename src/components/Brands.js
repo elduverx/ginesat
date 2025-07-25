@@ -27,7 +27,7 @@ const Brands = () => {
     {
       id: 4,
       name: 'Mitsubishi Electric',
-      logo: 'https://bestech-group.com/wp-content/uploads/2024/06/mitsubishi-electric-en-best-technology-group.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Fujitsu-Logo.svg/640px-Fujitsu-Logo.svg.png',
       alt: 'Mitsubishi Electric logo'
     },
     {
