@@ -2,84 +2,90 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+
+const BrandLogo = ({ brand }) => {
+  const [hasError, setHasError] = React.useState(false);
+
+  if (hasError) {
+    return (
+      <div className="flex h-12 w-full items-center justify-center rounded-xl border border-blue-100 bg-blue-50 px-3 text-center text-[10px] font-black leading-tight text-blue-800 uppercase tracking-tighter">
+        {brand.name}
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={brand.logo}
+      alt={brand.alt}
+      className="h-10 w-full object-contain filter grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+      loading="lazy"
+      onError={() => setHasError(true)}
+    />
+  );
+};
 
 const Brands = () => {
   const brands = [
     {
       id: 1,
       name: 'Leroy Merlin',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Leroy_Merlin.svg/1200px-Leroy_Merlin.svg.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Leroy_Merlin_-_logo_%28France%2C_1995-%29.svg',
       alt: 'Leroy Merlin logo'
     },
     {
       id: 2,
       name: 'El Corte Inglés',
-      logo: 'https://www.elcorteingles.es/recursos/informacioncorporativa/doc/portal/2017/07/06/eci-triangulo-logo.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Logo_Corte_Ingl%C3%A9s.svg',
       alt: 'El Corte Inglés logo'
     },
     {
       id: 3,
       name: 'Daikin',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/DAIKIN_logo.svg/2560px-DAIKIN_logo.svg.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/0/05/DAIKIN_logo.svg',
       alt: 'Daikin logo'
     },
     {
       id: 4,
       name: 'Mitsubishi Electric',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Fujitsu-Logo.svg/640px-Fujitsu-Logo.svg.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Mitsubishi_Electric_logo.svg',
       alt: 'Mitsubishi Electric logo'
     },
     {
       id: 5,
       name: 'Carrier',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Logo_of_the_Carrier_Corporation.svg/2560px-Logo_of_the_Carrier_Corporation.svg.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/8/8f/Logo_of_the_Carrier_Corporation.svg',
       alt: 'Carrier logo'
     },
     {
       id: 6,
       name: 'Bosch',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Bosch_logo.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Bosch-logo.svg',
       alt: 'Bosch logo'
     }
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-20 bg-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Trabajamos con las mejores <span className="text-blue-600">marcas</span>
+        <div className="text-center mb-16">
+          <p className="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs mb-4">Marcas de Confianza</p>
+          <h2 className="text-2xl md:text-3xl font-black text-gray-900">
+            Servicio oficial y multimarca
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Colaboramos con los principales distribuidores y fabricantes de climatización y calefacción para ofrecerte los mejores productos y servicios
-          </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
           {brands.map((brand, index) => (
             <motion.div
               key={brand.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              className="group flex items-center justify-center p-8 bg-white rounded-[2rem] shadow-sm hover:shadow-xl hover:shadow-blue-100 transition-all duration-500 border border-slate-100 h-32"
             >
-              <div className="relative w-32 h-16">
-                <Image
-                  src={brand.logo}
-                  alt={brand.alt}
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 128px) 100vw, 128px"
-                  priority={index < 2}
-                  onError={(e) => {
-                    console.error(`Error loading image for ${brand.name}`);
-                    e.target.style.display = 'none';
-                  }}
-                />
-              </div>
+              <BrandLogo brand={brand} />
             </motion.div>
           ))}
         </div>
@@ -88,4 +94,4 @@ const Brands = () => {
   );
 };
 
-export default Brands; 
+export default Brands;

@@ -1,19 +1,19 @@
 {
   "name": "GineSAT Servicios",
   "short_name": "GineSAT",
-  "description": "Especialistas en aire acondicionado y calderas en Torrent, Valencia",
+  "description": "Servicio técnico de aire acondicionado y calderas en Torrente y Valencia",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#2563eb",
+  "theme_color": "#207765",
   "icons": [
     {
-      "src": "/icon-192x192.png",
-      "sizes": "192x192",
+      "src": "/logo_transparente.png",
+      "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/icon-512x512.png",
+      "src": "/logo_transparente.png",
       "sizes": "512x512",
       "type": "image/png"
     }

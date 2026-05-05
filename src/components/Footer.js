@@ -2,149 +2,127 @@
 
 import React from 'react';
 import { Link } from 'react-scroll';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaPhone, FaEnvelope, FaMapMarkerAlt, FaChevronRight } from 'react-icons/fa';
+import Image from 'next/image';
 
 const Footer = () => {
   const year = new Date().getFullYear();
 
+  const footerLinks = [
+    { title: 'Empresa', links: [
+      { name: 'Inicio', to: 'inicio' },
+      { name: 'Nosotros', to: 'sobre-nosotros' },
+      { name: 'Servicios', to: 'servicios' },
+      { name: 'Opiniones', to: 'opiniones' },
+    ]},
+    { title: 'Servicios', links: [
+      { name: 'Aire Acondicionado', to: 'servicios' },
+      { name: 'Calderas de Gas', to: 'servicios' },
+      { name: 'Mantenimiento', to: 'servicios' },
+      { name: 'Urgencias 24/7', to: 'servicios' },
+    ]},
+  ];
+
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Columna 1 - Logo y Acerca de */}
-          <div>
-            <h2 className="text-2xl font-bold mb-4">
-              GineSAT<span className="text-blue-400">Servicios</span>
-            </h2>
-            <p className="text-gray-400 mb-6">
-              Expertos en climatización y calefacción, ofreciendo servicios profesionales de instalación, reparación y mantenimiento.
+    <footer className="bg-blue-950 text-white relative overflow-hidden">
+      {/* Decorative background pattern */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          
+          {/* Brand Column */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-8 group cursor-pointer">
+              <div className="relative h-12 w-12 transition-transform duration-500 group-hover:rotate-12">
+                <Image src="/logo_transparente.png" alt="GineSAT" fill className="object-contain" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-black tracking-tighter leading-none">
+                  Gine<span className="text-orange-400">SAT</span>
+                </h2>
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-300">Servicios Técnicos</span>
+              </div>
+            </div>
+            <p className="text-blue-100/70 text-sm leading-relaxed mb-8 max-w-xs">
+              Especialistas en confort térmico con más de 15 años de experiencia. Calidad, rapidez y garantía oficial en cada reparación.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaFacebook size={20} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaTwitter size={20} />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaInstagram size={20} />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaLinkedin size={20} />
-              </a>
+            <div className="flex space-x-3">
+              {[FaFacebook, FaInstagram, FaLinkedin, FaTwitter].map((Icon, i) => (
+                <a key={i} href="#" className="h-10 w-10 rounded-xl bg-blue-900 flex items-center justify-center text-blue-200 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
           
-          {/* Columna 2 - Enlaces rápidos */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Enlaces rápidos</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="inicio"
-                  smooth={true}
-                  duration={500}
-                  className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
-                >
-                  Inicio
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="servicios"
-                  smooth={true}
-                  duration={500}
-                  className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
-                >
-                  Servicios
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="sobre-nosotros"
-                  smooth={true}
-                  duration={500}
-                  className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
-                >
-                  Sobre Nosotros
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="opiniones"
-                  smooth={true}
-                  duration={500}
-                  className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
-                >
-                  Opiniones
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="contacto"
-                  smooth={true}
-                  duration={500}
-                  className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
-                >
-                  Contacto
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Links Columns */}
+          {footerLinks.map((group, i) => (
+            <div key={i}>
+              <h3 className="text-sm font-black uppercase tracking-[0.2em] text-blue-300 mb-8">{group.title}</h3>
+              <ul className="space-y-4">
+                {group.links.map((link, j) => (
+                  <li key={j}>
+                    <Link
+                      to={link.to}
+                      smooth={true}
+                      duration={500}
+                      className="text-blue-100/60 hover:text-white transition-colors cursor-pointer text-sm font-bold flex items-center group"
+                    >
+                      <FaChevronRight size={10} className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
           
-          {/* Columna 3 - Servicios */}
+          {/* Contact Column */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Nuestros Servicios</h3>
-            <ul className="space-y-2">
-              <li className="text-gray-400">Reparación de aire acondicionado</li>
-              <li className="text-gray-400">Mantenimiento de climatización</li>
-              <li className="text-gray-400">Instalación de aire acondicionado</li>
-              <li className="text-gray-400">Reparación de calderas de gas</li>
-              <li className="text-gray-400">Mantenimiento de calderas de gasóleo</li>
-              <li className="text-gray-400">Revisión oficial de calderas</li>
-            </ul>
-          </div>
-          
-          {/* Columna 4 - Contacto */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <FaMapMarkerAlt className="text-blue-400 mr-3 mt-1" />
-                <span className="text-gray-400">Mare de Deu de la Purificacio 26, 46900 Torrent, Valencia</span>
+            <h3 className="text-sm font-black uppercase tracking-[0.2em] text-blue-300 mb-8">Contacto</h3>
+            <ul className="space-y-6">
+              <li className="flex items-start gap-4">
+                <div className="h-10 w-10 rounded-xl bg-blue-900 flex-shrink-0 flex items-center justify-center text-blue-400">
+                  <FaMapMarkerAlt />
+                </div>
+                <span className="text-sm text-blue-100/70 leading-snug">
+                  Mare de Deu de la Purificacio 26, 46900 Torrent, Valencia
+                </span>
               </li>
-              <li className="flex items-center">
-                <FaPhone className="text-blue-400 mr-3" />
-                <a href="tel:+34663215621" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <li className="flex items-center gap-4 group">
+                <div className="h-10 w-10 rounded-xl bg-blue-900 flex-shrink-0 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  <FaPhone />
+                </div>
+                <a href="tel:+34663215621" className="text-lg font-black text-white hover:text-blue-300 transition-colors">
                   +34 663 215 621
                 </a>
               </li>
-              <li className="flex items-center">
-                <FaEnvelope className="text-blue-400 mr-3" />
-                <a href="mailto:ginesat24@gmail.com" className="text-gray-400 hover:text-blue-400 transition-colors">
-                  ginesat24@gmail.com
+              <li className="flex items-center gap-4 group">
+                <div className="h-10 w-10 rounded-xl bg-blue-900 flex-shrink-0 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  <FaEnvelope />
+                </div>
+                <a href="mailto:info@ginesat.com" className="text-sm font-bold text-blue-100/70 hover:text-white transition-colors">
+                  info@ginesat.com
                 </a>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="text-sm text-gray-500">
-              © {year} GineSAT Servicios. Todos los derechos reservados.
-            </div>
-            <div className="flex justify-start md:justify-end space-x-6">
-              <a href="/aviso-legal" className="text-sm text-gray-500 hover:text-blue-400 transition-colors">
-                Aviso Legal
+        {/* Bottom Bar */}
+        <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-xs font-bold text-blue-100/40 uppercase tracking-widest">
+            © {year} GineSAT Servicios. Diseño de alto rendimiento.
+          </p>
+          <div className="flex gap-8">
+            {['Aviso Legal', 'Privacidad', 'Cookies'].map((text, i) => (
+              <a key={i} href="#" className="text-[10px] font-black uppercase tracking-widest text-blue-100/40 hover:text-blue-300 transition-colors">
+                {text}
               </a>
-              <a href="/politica-privacidad" className="text-sm text-gray-500 hover:text-blue-400 transition-colors">
-                Política de Privacidad
-              </a>
-              <a href="/cookies" className="text-sm text-gray-500 hover:text-blue-400 transition-colors">
-                Cookies
-              </a>
-            </div>
+            ))}
           </div>
         </div>
       </div>

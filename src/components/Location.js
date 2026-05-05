@@ -52,7 +52,7 @@ const Location = () => {
                 <div>
                   <h4 className="font-medium text-gray-800 mb-1">Contacto</h4>
                   <p className="text-gray-600">Teléfono: +34 663 215 621</p>
-                  <p className="text-gray-600">Email: ginesat24@gmail.com</p>
+                  <p className="text-gray-600">Email: info@ginesat.com</p>
                 </div>
               </div>
               
@@ -83,9 +83,9 @@ const Location = () => {
           >
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Zona Local</h3>
             <p className="text-gray-600 mb-4">
-              Servicio rápido en Torrent y alrededores inmediatos.
+              Servicio rápido en Torrente sin coste de desplazamiento.
             </p>
-            <p className="text-blue-600 font-medium">Tiempo de respuesta: 1-3 horas</p>
+            <p className="text-blue-600 font-medium">Torrente: sin coste</p>
           </motion.div>
           
           <motion.div

@@ -1,55 +1,98 @@
 import './globals.css'
 
+const siteUrl = 'https://ginesat.com';
+const businessName = 'GineSAT Servicios';
+const phone = '+34663215621';
+const displayPhone = '663 215 621';
+const description = 'Servicio técnico de aire acondicionado y calderas en Torrente y Valencia. Reparación, instalación y mantenimiento con revisión desde 40€ descontable.';
+
 export const metadata = {
-  title: 'GineSAT | Aire Acondicionado y Calderas en Torrent, Valencia',
-  description: 'Especialistas en aire acondicionado, calderas de gas y gasóleo en Torrent. Instalación, reparación y mantenimiento profesional. Diagnóstico 35€ descontable. ☎ 663 215 621',
-  keywords: 'aire acondicionado Torrent, calderas gas Valencia, reparación aire acondicionado, mantenimiento calderas, instalación climatización, servicio técnico calderas, GineSAT',
-  authors: [{ name: 'GineSAT Servicios' }],
-  creator: 'GineSAT Servicios',
-  publisher: 'GineSAT Servicios',
-  robots: 'index, follow',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'GineSAT | Aire acondicionado y calderas en Torrente, Valencia',
+    template: '%s | GineSAT'
+  },
+  description,
+  applicationName: businessName,
+  keywords: [
+    'GineSAT',
+    'aire acondicionado Torrente',
+    'aire acondicionado Torrent',
+    'reparación aire acondicionado Valencia',
+    'instalación aire acondicionado Valencia',
+    'mantenimiento aire acondicionado',
+    'calderas gas Valencia',
+    'calderas gasóleo Valencia',
+    'reparación calderas Torrente',
+    'revisión calderas 40 euros',
+    'servicio técnico climatización'
+  ],
+  authors: [{ name: businessName }],
+  creator: businessName,
+  publisher: businessName,
+  category: 'Servicios de climatización y calefacción',
   alternates: {
-    canonical: 'https://ginesat.com'
+    canonical: '/'
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1
+    }
   },
   openGraph: {
     type: 'website',
     locale: 'es_ES',
-    url: 'https://ginesat.com',
-    siteName: 'GineSAT Servicios',
-    title: 'GineSAT | Aire Acondicionado y Calderas en Torrent, Valencia',
-    description: 'Especialistas en aire acondicionado, calderas de gas y gasóleo en Torrent. Instalación, reparación y mantenimiento profesional. Diagnóstico 35€ descontable.',
+    url: siteUrl,
+    siteName: businessName,
+    title: 'GineSAT | Aire acondicionado y calderas en Torrente',
+    description,
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'GineSAT - Servicios de Aire Acondicionado y Calderas'
+        url: '/aire.png',
+        width: 1402,
+        height: 1122,
+        alt: 'Servicio técnico GineSAT de aire acondicionado y calderas'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GineSAT | Aire Acondicionado y Calderas en Torrent',
-    description: 'Especialistas en climatización y calderas en Torrent, Valencia. Servicio profesional con garantía.',
-    images: ['/twitter-image.jpg']
+    title: 'GineSAT | Servicio técnico en Torrente',
+    description: `Aire acondicionado y calderas en Torrente y Valencia. Revisión desde 40€. Tel. ${displayPhone}`,
+    images: ['/aire.png']
   },
-  verification: {
-    google: 'your-google-verification-code'
+  icons: {
+    icon: '/logo_transparente.png',
+    shortcut: '/logo_transparente.png',
+    apple: '/logo_transparente.png'
   },
-  category: 'Servicios de Climatización y Calefacción'
+  manifest: '/manifest.json'
 }
 
 export default function RootLayout({ children }) {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': 'https://ginesat.com',
-    name: 'GineSAT Servicios',
+    '@type': 'HVACBusiness',
+    '@id': `${siteUrl}/#business`,
+    name: businessName,
+    alternateName: 'GineSAT',
+    url: siteUrl,
+    logo: `${siteUrl}/logo_transparente.png`,
     image: [
-      'https://ginesat.com/logo.jpg',
-      'https://ginesat.com/servicios.jpg'
+      `${siteUrl}/logo_transparente.png`,
+      `${siteUrl}/aire.png`,
+      `${siteUrl}/airee.png`
     ],
-    description: 'Especialistas en aire acondicionado, calderas de gas y gasóleo en Torrent, Valencia. Servicios de instalación, reparación y mantenimiento profesional.',
+    description,
+    telephone: phone,
+    email: 'info@ginesat.com',
+    priceRange: '€€',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Mare de Deu de la Purificacio 26',
@@ -63,10 +106,12 @@ export default function RootLayout({ children }) {
       latitude: '39.4370',
       longitude: '-0.4677'
     },
-    url: 'https://ginesat.com',
-    telephone: '+34663215621',
-    email: 'ginesat24@gmail.com',
-    priceRange: '€€',
+    areaServed: [
+      { '@type': 'City', name: 'Torrente' },
+      { '@type': 'City', name: 'Torrent' },
+      { '@type': 'AdministrativeArea', name: 'Valencia' },
+      { '@type': 'AdministrativeArea', name: 'Comunidad Valenciana' }
+    ],
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -81,41 +126,46 @@ export default function RootLayout({ children }) {
         closes: '14:00'
       }
     ],
-    serviceArea: {
-      '@type': 'GeoCircle',
-      geoMidpoint: {
-        '@type': 'GeoCoordinates',
-        latitude: '39.4370',
-        longitude: '-0.4677'
-      },
-      geoRadius: '50000'
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: phone,
+      contactType: 'customer service',
+      areaServed: 'ES',
+      availableLanguage: ['es']
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Servicios de Climatización y Calefacción',
+      name: 'Servicios de climatización y calefacción',
       itemListElement: [
         {
           '@type': 'Offer',
+          name: 'Revisión de aire acondicionado',
+          price: '40',
+          priceCurrency: 'EUR',
           itemOffered: {
             '@type': 'Service',
-            name: 'Reparación de Aire Acondicionado',
-            description: 'Servicio de reparación profesional de equipos de aire acondicionado con garantía'
+            name: 'Reparación de aire acondicionado',
+            description: 'Diagnóstico y reparación profesional de equipos de aire acondicionado.'
           }
         },
         {
           '@type': 'Offer',
+          name: 'Revisión de calderas',
+          price: '40',
+          priceCurrency: 'EUR',
           itemOffered: {
             '@type': 'Service',
-            name: 'Instalación de Aire Acondicionado',
-            description: 'Instalación profesional de sistemas de climatización'
+            name: 'Reparación y revisión de calderas',
+            description: 'Servicio técnico para calderas de gas y gasóleo con certificación.'
           }
         },
         {
           '@type': 'Offer',
+          name: 'Instalación de aire acondicionado',
           itemOffered: {
             '@type': 'Service',
-            name: 'Reparación de Calderas',
-            description: 'Servicio técnico especializado en calderas de gas y gasóleo'
+            name: 'Instalación de aire acondicionado',
+            description: 'Instalación profesional y puesta en marcha de sistemas de climatización.'
           }
         }
       ]
@@ -135,10 +185,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#2563eb" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#207765" />
       </head>
       <body className="min-h-screen bg-white">
         {children}

@@ -2,111 +2,115 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaMedal, FaUserFriends, FaRecycle } from 'react-icons/fa';
+import { FaMedal, FaUserFriends, FaRecycle, FaCheckCircle, FaAward, FaHistory } from 'react-icons/fa';
 import Image from 'next/image';
 
 const About = () => {
-  const values = [
-    {
-      id: 1,
-      title: 'Excelencia',
-      description: 'Buscamos la excelencia en cada servicio, utilizando las mejores técnicas y herramientas del mercado.',
-      icon: <FaMedal className="w-8 h-8 text-blue-600" />
-    },
-    {
-      id: 2,
-      title: 'Compromiso',
-      description: 'Nos comprometemos con cada cliente para ofrecer soluciones duraderas y de calidad.',
-      icon: <FaUserFriends className="w-8 h-8 text-blue-600" />
-    },
-    {
-      id: 3,
-      title: 'Sostenibilidad',
-      description: 'Apostamos por la eficiencia energética y el cuidado del medio ambiente en todas nuestras instalaciones.',
-      icon: <FaRecycle className="w-8 h-8 text-blue-600" />
-    }
+  const stats = [
+    { label: 'Años de Experiencia', value: '15+', icon: <FaHistory className="text-blue-600" /> },
+    { label: 'Clientes Satisfechos', value: '1000+', icon: <FaUserFriends className="text-blue-600" /> },
+    { label: 'Garantía Oficial', value: '100%', icon: <FaAward className="text-blue-600" /> },
   ];
 
   return (
-    <section id="sobre-nosotros" className="py-20 bg-white">
+    <section id="sobre-nosotros" className="py-24 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Image Side */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="relative"
           >
-            <div className="relative">
-              <div className="bg-blue-50 absolute -top-6 -left-6 w-24 h-24 rounded-lg"></div>
-              <div className="bg-orange-50 absolute -bottom-6 -right-6 w-24 h-24 rounded-lg"></div>
-              <div className="relative z-10 rounded-xl overflow-hidden shadow-xl">
-                <img 
-                  src="/air.jpg" 
-                  alt="Equipo de técnicos de climatización" 
-                  className="w-full h-[400px] object-cover"
-                />
-              </div>
-              <div className="absolute top-1/2 right-0 transform translate-x-1/3 -translate-y-1/2 bg-white p-4 rounded-lg shadow-lg z-20">
-                <div className="flex flex-col items-center">
-                  <p className="text-4xl font-bold text-blue-600">15+</p>
-                  <p className="text-gray-600 text-sm">Años de experiencia</p>
+            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white">
+              <Image 
+                src="/airee.png" 
+                alt="Equipo de técnicos de GineSAT" 
+                width={600}
+                height={800}
+                className="w-full h-auto object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent" />
+            </div>
+            
+            {/* Stats Overlay */}
+            <div className="absolute -bottom-10 -right-10 hidden md:block z-20">
+              <div className="bg-white p-8 rounded-[2rem] shadow-2xl border border-blue-50">
+                <div className="grid grid-cols-1 gap-6">
+                  {stats.map((stat, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <div className="h-12 w-12 rounded-2xl bg-blue-50 flex items-center justify-center text-xl">
+                        {stat.icon}
+                      </div>
+                      <div>
+                        <p className="text-2xl font-black text-gray-900 leading-none">{stat.value}</p>
+                        <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">{stat.label}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
+
+            {/* Decorative background circle */}
+            <div className="absolute -top-10 -left-10 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl -z-10" />
           </motion.div>
           
+          {/* Text Side */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex flex-col space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-              Sobre <span className="text-blue-600">GineSAT</span>
+            <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">Nuestra Trayectoria</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-8 leading-tight">
+              Más de <span className="text-blue-600">15 años</span> ofreciendo confianza técnica
             </h2>
-            <p className="text-lg text-gray-600">
-              En GineSAT somos especialistas en climatización y calefacción con más de 15 años de experiencia en el sector. Nuestro equipo de técnicos certificados está preparado para ofrecer soluciones profesionales adaptadas a cualquier necesidad.
-            </p>
-            <p className="text-lg text-gray-600">
-              Desde nuestros inicios, hemos apostado por la calidad, la formación continua y la satisfacción del cliente como pilares fundamentales de nuestro trabajo diario.
-            </p>
             
-            <div className="pt-4">
-              <h3 className="text-xl font-semibold text-gray-800 mb-6">Nuestros valores</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {values.map((value) => (
-                  <motion.div
-                    key={value.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: value.id * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex flex-col items-center text-center p-4 rounded-lg bg-gray-50"
-                  >
-                    <div className="h-16 w-16 rounded-full bg-blue-50 flex items-center justify-center mb-4">
-                      {value.icon}
-                    </div>
-                    <h4 className="text-lg font-medium text-gray-800 mb-2">{value.title}</h4>
-                    <p className="text-gray-600">{value.description}</p>
-                  </motion.div>
-                ))}
-              </div>
+            <div className="space-y-6 text-lg text-gray-600 leading-relaxed mb-10">
+              <p>
+                En <span className="font-bold text-blue-900">GineSAT</span> entendemos que tu confort no puede esperar. Por eso hemos consolidado un equipo de técnicos certificados especialistas en las marcas líderes del mercado.
+              </p>
+              <p>
+                Nuestra filosofía se basa en tres pilares: <span className="text-gray-900 font-semibold">transparencia total</span> en los presupuestos, <span className="text-gray-900 font-semibold">rapidez de respuesta</span> y una <span className="text-gray-900 font-semibold">calidad técnica</span> avalada por miles de reparaciones con éxito en Torrent y toda la provincia de Valencia.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+              {[
+                "Técnicos Certificados RITE",
+                "Garantía oficial por escrito",
+                "Repuestos originales",
+                "Atención personalizada"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <FaCheckCircle className="text-blue-500 text-xl" />
+                  <span className="font-bold text-gray-800">{item}</span>
+                </div>
+              ))}
             </div>
             
-            <div className="mt-8 flex justify-center md:justify-start">
-              <a
-                href="#contacto"
-                className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
-              >
-                Contacta con nosotros
-                <svg className="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-            </div>
+            <a
+              href="#contacto"
+              className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-2xl font-black shadow-lg shadow-blue-200 hover:bg-blue-700 hover:-translate-y-1 transition-all active:scale-95"
+            >
+              Conoce nuestro equipo
+            </a>
           </motion.div>
+        </div>
+
+        {/* Mobile Stats (visible only on small screens) */}
+        <div className="grid grid-cols-2 gap-4 mt-20 md:hidden">
+          {stats.slice(0, 2).map((stat, i) => (
+            <div key={i} className="bg-white p-6 rounded-2xl shadow-lg border border-blue-50 text-center">
+              <p className="text-3xl font-black text-blue-600">{stat.value}</p>
+              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
