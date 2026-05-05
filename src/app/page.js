@@ -7,6 +7,7 @@ import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
 import Location from '@/components/Location';
 import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import Brands from '../components/Brands';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <ContactForm />
       <Location />
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 }
